@@ -1,0 +1,151 @@
+
+.body {
+	width: 100%;
+	height: auto;
+	margin-bottom: 75rpx;
+}
+.contain {
+	margin-top: 0px;
+}
+.chat,.chat_groups,.chat_lists{
+	width: 100%;
+	height: 45px;
+	display: flex;
+	align-items: center;
+}
+.chat,.chat_groups {
+	border-bottom: 1px solid rgba(173,185,193,0.5);
+}
+.chat image {
+	width: 6%;
+	height: 50%;
+	margin:0 13px 0 10px;
+}
+.chat_groups image {
+	width: 8%;
+	height: 54%;
+	margin:0 10px 0 8px;
+}
+.chat_lists image {
+	width: 12%;
+	height:100%;
+	margin-right: 2px;
+}
+.chat text,.chat_groups text,.chat_lists text {
+	font-size:14px;
+}
+.numbers {
+	width: 100%;
+	height: 60px;
+}
+.nbr_header {
+	height: 20px;
+	background-color: #D4D4D4;
+	line-height: 20px;
+	padding-left: 16px;
+}
+.nbr_body {
+	width: 70%;
+	height: 40px;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 40px;
+	margin-right: 0;
+	float: left;
+}
+.mask {
+	background-color: black;
+	opacity: 0.4;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.delete {
+	width: 30px;
+	height: 35px;
+	float: right;
+	margin-top: 6px;
+}
+.delete image {
+	width: 16px;
+	height: 2px;
+}
+.info {
+	width: 12%;
+	height: 40px;
+	display: inline-block;
+	float: left;
+}
+.info image {
+	width: 68%;
+	height: 70%;
+	display: inline-block;
+	margin: 6px auto auto 6px;
+}
+
+
+
+
+.chatRoom_tab {
+	width: 100%;
+	height: 90rpx;
+	background-color: rgb(250,251,252);
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	border-top: 1px solid rgba(173,185,193,0.5);
+	display: flex;
+	justify-content: space-around;
+    box-shadow:0 0 7rpx rgba(0, 0, 0, .75);
+}
+
+.contacts,.settings {
+	width:75rpx;
+    height:75rpx;
+    margin-top:7rpx;
+}
+.chats {
+	width: 37px;
+	height: 37px;
+	margin-top: 8px;
+}
+.contacts image,.settings image {
+	width:50rpx;
+    height:50rpx;
+}
+
+.bar-img{
+    	width:75rpx;
+        height:75rpx;
+        display:flex;
+        justify-content:center;
+}
+
+.bar-img image{
+    width:50rpx;
+    height:50rpx;
+}
+
+.bar-text{
+    margin-top:-22rpx;
+	width:75rpx;
+    height:75rpx;
+    display:flex;
+    justify-content:center;
+    font-size:25rpx;
+}
+
+.active{
+    color:#1296db;
+}
+
+.chats image {
+	width: 100%;
+	height: 100%;
+}
+
+.rooms{
+  width: 100%;
+}

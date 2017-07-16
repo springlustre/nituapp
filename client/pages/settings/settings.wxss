@@ -1,0 +1,92 @@
+.person {
+	width: 100%;
+	height: 45px;
+}
+.setting_list {
+	width: 96%;
+	height: 45px;
+	float: right;
+	border-bottom: 1px solid rgba(173,185,193,0.5);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 16px;
+}
+.list_right {
+	margin-right: 10px;
+	color: rgba(173,185,193,0.5);
+}
+.setting_list switch {
+	margin:2px 10px 0 0;
+}
+.list_end {
+	margin-bottom: 20px;
+}
+button {
+	position: absolute;
+	bottom: 120px;
+	right: 0;
+	left:0;
+	display: block;
+	width: 94%;
+	height: 46px;
+	border-radius: 0;
+}
+
+
+.chatRoom_tab {
+	width: 100%;
+	height: 90rpx;
+	background-color: rgb(250,251,252);
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	border-top: 1px solid rgba(173,185,193,0.5);
+	display: flex;
+	justify-content: space-around;
+    box-shadow:0 0 7rpx rgba(0, 0, 0, .75);
+}
+
+.contacts,.settings {
+	width:75rpx;
+    height:75rpx;
+    margin-top:7rpx;
+}
+.chats {
+	width: 37px;
+	height: 37px;
+	margin-top: 8px;
+}
+.contacts image,.settings image {
+	width:50rpx;
+    height:50rpx;
+}
+
+.bar-img{
+    	width:75rpx;
+        height:75rpx;
+        display:flex;
+        justify-content:center;
+}
+
+.bar-img image{
+    width:50rpx;
+    height:50rpx;
+}
+
+.bar-text{
+    margin-top:-22rpx;
+	width:75rpx;
+    height:75rpx;
+    display:flex;
+    justify-content:center;
+    font-size:25rpx;
+}
+
+.active{
+    color:#1296db;
+}
+.chats image {
+	width: 100%;
+	height: 100%;
+}

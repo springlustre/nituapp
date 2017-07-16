@@ -1,0 +1,60 @@
+
+<view class="body">
+
+
+	  <!--群组-->
+	  <block  wx:for = "{{rooms}}">
+          <view class="rooms">
+                <view class="info" bindtap="into_group"
+                    data-groupid="{{item.roomId}}" data-username="{{ item.name }}">
+                    <image src="../../images/number.png"  ></image>
+                </view>
+                <view class="nbr_body" data-username="{{ item.name }}" data-groupid="{{item.roomId}}"
+                bindtap="into_group">
+                    <text data-username="{{ item.name }}">{{ item.name }}</text>
+                </view>
+                <view class="msg_num">
+                    3
+                </view>
+          </view>
+          <view class="rooms">
+                <view class="info" bindtap="into_group"
+                    data-groupid="{{item.roomId}}" data-username="{{ item.name }}">
+                    <image src="../../images/number.png"  ></image>
+                </view>
+                <view class="nbr_body" data-username="{{ item.name }}" data-groupid="{{item.roomId}}"
+                bindtap="into_group">
+                    <text data-username="{{ item.name }}"> "哈哈哈哈哈哈顶顶顶" </text>
+                </view>
+                <view class="msg_num">
+                    3
+                </view>
+          </view>
+       </block>
+
+</view>
+<view class="mask" bindtap="close_mask" wx:if="{{show_mask}}"></view>
+
+<view class="chatRoom_tab">
+	<view class="contacts">
+	    <view class="bar-img">
+	      <image src="../../images/icon/chat-bar2.png"></image>
+	    </view>
+		<view class="bar-text active"> 会话 </view>
+	</view>
+
+	<view class="contacts" bindtap="tabRooms">
+	    <view class="bar-img">
+	      <image src="../../images/icon/room-bar.png"></image>
+	    </view>
+		<view class="bar-text"> 会议室 </view>
+	</view>
+
+    <view class="contacts" bindtap="tabSetting">
+        <view class="bar-img">
+          <image src="../../images/icon/my-bar.png"></image>
+        </view>
+        <view class="bar-text"> 我的 </view>
+    </view>
+
+</view>

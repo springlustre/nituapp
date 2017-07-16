@@ -1,0 +1,574 @@
+
+
+/*手机授权登录*/
+/*导航*/
+
+.bar
+{
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+
+    height: 3.6rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    border-bottom: 0;
+    background-color: #f7f7f7;
+    -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, .85);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .85);
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+.bar-nav
+{
+    top: 0;
+    z-index: 999;
+    -webkit-box-shadow: 0 0.1rem 0.4rem #ccc;
+    box-shadow: 0 0.1rem 0.4rem #ccc;
+    display: flex;
+    justify-content:space-between;
+
+}
+
+.mobile-bar{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    width: 100%;
+    color: #9a9a9a;
+    background-color: #0d0d0d;
+    font-size: 1.8rem;
+    padding: 0.1rem;
+}
+
+.bar-title
+{
+    font-weight: 500;
+    line-height: 3.6rem;
+
+    position: absolute;
+
+    display: block;
+
+    width: 100%;
+    margin: 0 -1rem;
+    padding: 0;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: #000;
+}
+
+.logo-div{
+    margin-top: 8rem;
+    height:36rem;
+    width:100%;
+    /*background-color: #0bb20c;*/
+    text-align: center;
+}
+
+.logo-div> img{
+    width:16rem;
+    border-radius: 8rem;
+    margin-top: 3rem;
+    border-color: #222222;
+    -webkit-box-shadow: 0 0 1.9rem rgba(0, 0, 0, .75);
+    box-shadow: 0 0 1.9rem rgba(0, 0, 0, .75);
+}
+
+.logo-div-tips{
+    margin: 3rem auto;
+    padding: 1rem 0.5rem;
+    text-align: left;
+    font-size: 2rem;
+    color:#cdcdcd;
+    border-bottom: double 2px #676767;
+}
+
+.logo-div-remind{
+    margin: -2rem auto;
+    padding: 0rem 0.5rem;
+    text-align: left;
+    font-size: 2rem;
+    color:#aaaaaa;
+}
+
+.logo-div-remind >img{
+    width: 2.3rem;
+    vertical-align: middle;
+}
+
+.login-btn-div{
+    margin-top: 3rem;
+    padding: 1rem 0rem;
+    text-align: center;
+}
+
+.mob-background{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #43464d;
+    height: 100vh;
+    top: 0px;
+    position: fixed;
+    width:100%;
+}
+
+.mob-background-white{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #ffffff;
+    height: 100vh;
+    top: 0px;
+    position: fixed;
+    width:100%;
+}
+
+.mob-condirm-btn{
+    font-size: 2.8rem;
+    width: 99%;
+    padding: 0.9rem 0.3rem;
+    border: none;
+    color: #fff;
+    background-color: #0bb20c;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.mob-cancel-btn{
+    margin-top: 1rem;
+    font-size: 2.8rem;
+    width: 99%;
+    padding: 0.9rem 0.3rem;
+    border: none;
+    color: #fff;
+    background-color: #f43530;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.confirm-success{
+    margin-top: 10rem;
+    height:18rem;
+    width:100%;
+    text-align: center;
+}
+
+.confirm-success img{
+    width: 12rem;
+}
+
+.confirm-success > p{
+    font-size: 3rem;
+}
+
+
+
+
+
+/*扫码登录页*/
+.qr-code-board{
+    position: absolute;
+    z-index: 999;
+    width:26rem;
+    height: 20rem;
+    transition: opacity .5s;
+    background-color: #ffffff;
+    /*padding: 0rem 3rem;*/
+    padding-top: 0.3rem;
+    float: right;
+    right:5%;
+    -webkit-box-shadow: 0 0 0.4rem rgba(0, 0, 0, .35);
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, .35);
+    text-align: center;
+    font-size:1rem;
+    filter:alpha(opacity=95); /*IE滤镜，透明度50%*/
+    -moz-opacity:0.95; /*Firefox私有，透明度50%*/
+    opacity:0.95;/*其他，透明度50%*/
+    top:50%;
+    margin-top: -10rem;
+}
+
+.qr-img{
+    margin-top: 1.3rem;
+}
+
+.qr-img img{
+    width:17rem;
+    vertical-align: middle;
+    margin-top: 0rem;
+    margin-left: 0rem;
+}
+
+.pc-login-logo{
+    position: absolute;
+    top: 3px;
+    right:3px;
+    cursor: pointer;
+}
+
+.pc-login-logo > img{
+    width: 3rem;
+}
+
+.login-board-title{
+    font-size: 1rem;
+    color:#000;
+    position: absolute;
+    top:1.3rem;
+    left: 1rem;
+}
+.pc-login-remind{
+    position: absolute;
+    right: 3rem;
+    top: 0.3rem;
+    border: 1px solid #f3d995;
+    font-size: 0.84rem;
+    line-height: 1.3rem;
+    padding: 1px 15px 1px 15px;
+    background: #fefcee;
+    color:#df9c1f;
+    cursor: pointer;
+}
+
+
+.qr-remind{
+    float:right;
+    margin-top: 4.5rem;
+    margin-right: 0.3rem;
+    display: none;
+}
+.qr-remind img{
+    width:7rem;
+}
+
+.qr-img-move{
+    float: left;
+}
+
+.qr-remind-show{
+    display: block;
+}
+
+.qr-bottom{
+    position: absolute;
+    padding: 0.3rem 1rem;
+    bottom: 0rem;
+    margin-left: 8rem;
+}
+
+.qr-bottom span{
+    display: inline-block;
+}
+
+.qr-bottom img{
+    width:2.2rem;
+    margin-top: -1rem;
+}
+
+.qr-bottom-text{
+    display: inline-block;
+}
+
+.qr-bottom-text p{
+    margin: -0.1rem;
+    padding: 0;
+    font-size: 0.7rem;
+}
+
+/**密码登录*/
+.pwd-login-div{
+    margin-top: 4rem;
+}
+
+.pwd-login-line{
+    margin-top: 1.3rem;
+    text-align: left;
+    display: inline-block;
+    border: 1px #dddddd solid;
+}
+
+
+
+.pwd-login-line>input:focus,
+.pwd-login-line>input{
+    border:none;
+    height:2rem;
+    width: 13rem;
+    outline:none;
+}
+
+.pwd-login-line>img{
+    width:2.2rem;
+    vertical-align: middle;
+    background-color: #ebebeb;
+}
+
+.pwd-login-ok{
+    margin-top: 1.3rem;
+}
+
+.pwd-login-ok > button{
+    font-size: 1rem;
+    width: 15.5rem;
+    padding: 0.5rem 0.3rem;
+    border: none;
+    color: #fff;
+    background-color: #3d86ff;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+
+.pc-login-title{
+    width:100%;
+    color:#83a9e6;
+    font-size:2rem;
+    height:11.5vh;
+    line-height: 11.5vh;
+    top:0px;
+    position: absolute;
+    padding-left: 2rem;
+    background-color: #ffffff;
+}
+
+
+.pc-login-div{
+    clear: both;
+    position: absolute;
+    width: 100%;
+    height: 77vh;
+    top:11.5vh;
+    /*margin-top:-10.5rem;*/
+    background-image:url(../img/login-bg.png);
+    background-size: auto 100%;
+}
+
+.login-footer{
+    width:100%;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    padding-bottom: 0.6rem;
+    color:#696969;
+    font-size: 0.72rem;
+}
+
+.login-footer>div>a{
+    cursor: pointer;
+    text-decoration: blink;
+    color: #696969;
+
+}
+
+.login-background{
+    background-color: #ffffff;
+}
+
+
+/*主页面*/
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+
+
+.feeler3-nav{
+    height:3rem;padding: 0.3rem 1rem;
+    background-image:url(../img/bar-bg.png);
+    background-size: auto 3rem;
+}
+
+.feeler3-container{
+    height:3rem;
+}
+
+.feeler3-brand{
+    font-size:1.5rem;
+}
+
+.feeler3-navbar{
+    font-size:1.0rem;
+}
+
+.feeler3-navbar img{
+    width: 1.2rem;
+}
+
+.feeler3-navbar-form{
+    font-size:1.0rem;
+}
+
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+    border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+    font-size: 0.9rem;
+    position: fixed;
+    width:12%;
+    top: 3rem;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    padding-right: 1px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #83a9e6;
+    border-right: 1px solid #eee;
+    color:#ffffff;
+}
+
+
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+
+
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+    color:#ffffff;
+    opacity: 0.8;
+}
+.nav-sidebar > li > a:hover{
+    color:#ffffff;
+    opacity: 0.8;
+    background-color: #5f8dd1;
+}
+
+.nav-sidebar > li > a:focus{
+    background-color: #83a9e6;
+}
+
+.nav-sidebar-img{
+    width:1.2rem;
+    margin-right: 0.3rem;
+}
+
+.bar-child{
+
+}
+
+.bar-child-img {
+    margin-left: 0.2rem;
+    width:0.7rem;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover{
+    background-color: #5f8dd1;
+}
+.nav-sidebar > .active > a:focus {
+    background-color: #5f8dd1;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 20px 10px;
+    margin-top: 0rem;
+    width:88%;
+    margin-left: 12%;
+}
+.main .page-header {
+    margin-top: 0;
+}
+
+
+/**
+  * 绑定微信
+ */
+
+.bind-wx-div{
+    width: 100%;
+    /*height: 14rem;*/
+    text-align: center;
+}
+
+.qr-bind-img{
+    text-align: center;
+}
+
+.qr-bind-user-info{
+
+}
+
+/*loading*/
+.loading{
+    width: 80px;
+    height: 40px;
+    margin-top: 6rem;
+}
+.loading span{
+    display: inline-block;
+    width: 8px;
+    height: 100%;
+    border-radius: 4px;
+    background: lightgreen;
+    -webkit-animation: load 1s ease infinite;
+}
+@-webkit-keyframes load{
+    0%,100%{
+        height: 40px;
+        background: lightgreen;
+    }
+    50%{
+        height: 70px;
+        margin: -15px 0;
+        background: lightblue;
+    }
+}
+.loading span:nth-child(2){
+    -webkit-animation-delay:0.2s;
+}
+.loading span:nth-child(3){
+    -webkit-animation-delay:0.4s;
+}
+.loading span:nth-child(4){
+    -webkit-animation-delay:0.6s;
+}
+.loading span:nth-child(5){
+    -webkit-animation-delay:0.8s;
+}
+

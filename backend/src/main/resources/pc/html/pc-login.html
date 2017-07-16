@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "format-detection" content = "telephone=no">
+    <title>feeler3</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="../css/business.css" rel="stylesheet">
+  <link href="../css/app.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/data.css">
+
+  <link rel="stylesheet" href="../css/modal.css">
+  <link href="../css/shop.css" rel="stylesheet">
+  <script src="/feeler3/static/pc/js/fetch.min.js"></script>
+  <script>
+    (function(designWidth, maxWidth) {
+      var doc = document,
+        win = window;
+      var docEl = doc.documentElement;
+      var tid;
+      var rootItem,rootStyle;
+
+      function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+        if (!maxWidth) {
+          maxWidth = 540;
+        };
+        if (width > maxWidth) {
+          width = maxWidth;
+        }
+        //与淘宝做法不同，直接采用简单的rem换算方法1rem=100px
+        var rem = width * 20 / designWidth;
+        //兼容UC开始
+        rootStyle="html{font-size:"+rem+'px !important}';
+        rootItem = document.getElementById('rootsize') || document.createElement("style");
+        if(!document.getElementById('rootsize')){
+          document.getElementsByTagName("head")[0].appendChild(rootItem);
+          rootItem.id='rootsize';
+        }
+        if(rootItem.styleSheet){
+          rootItem.styleSheet.disabled||(rootItem.styleSheet.cssText=rootStyle)
+        }else{
+          try{rootItem.innerHTML=rootStyle}catch(f){rootItem.innerText=rootStyle}
+        }
+        //兼容UC结束
+        docEl.style.fontSize = rem + "px";
+      };
+      refreshRem();
+
+      win.addEventListener("resize", function() {
+        clearTimeout(tid); //防止执行两次
+        tid = setTimeout(refreshRem, 300);
+      }, false);
+
+      win.addEventListener("pageshow", function(e) {
+        if (e.persisted) { // 浏览器后退的时候重新计算
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 300);
+        }
+      }, false);
+
+      if (doc.readyState === "complete") {
+        doc.body.style.fontSize = "16px";
+      } else {
+        doc.addEventListener("DOMContentLoaded", function(e) {
+          doc.body.style.fontSize = "16px";
+        }, false);
+      }
+    })(640, 640);
+
+    document.body.parentNode.style.overflow="hidden";
+
+    function test(){
+
+    }
+
+  </script>
+</head>
+<body>
+  <div class="login-background">
+
+    <div class="pc-login-title">
+        wifi客流分析系统
+    </div>
+
+
+
+    <div class="pc-login-div">
+      <div class="qr-code-board">
+        <!--<span class="login-board-title">扫码登录</span>-->
+        <!--<span class="pc-login-remind"> 密码登录在这里 </span>-->
+        <!--<div class="pc-login-logo"> <img src="../img/pc-login-logo.png"> </div>-->
+        <!--<div class="qr-img" onmouseover="test()">-->
+          <!--<img src="../img/qr-test.png">-->
+        <!--</div>-->
+        <!--<div class="qr-remind" >-->
+          <!--<img src="../img/scan-remind.png">-->
+        <!--</div>-->
+
+        <!--<div class="qr-bottom">-->
+          <!--<span>-->
+            <!--<img src="../img/scan-logo.png">-->
+          <!--</span>-->
+          <!--<span class="qr-bottom-text">-->
+            <!--<p>-->
+              <!--打开手机微信-->
+            <!--</p>-->
+            <!--<p>扫一扫</p>-->
+          <!--</span>-->
+        <!--</div>-->
+
+
+        <span class="login-board-title">密码登录</span>
+        <span class="pc-login-remind"> 扫码登录在这里 </span>
+        <div class="pc-login-logo"> <img src="../img/scan-login-logo.png"> </div>
+        <div class="pwd-login-div">
+          <div class="pwd-login-line">
+            <img src="../img/username-logo.png"><input type="text">
+          </div>
+          <div class="pwd-login-line">
+            <img src="../img/pwd-logo.png">  <input type="text">
+          </div>
+          <div class="pwd-login-ok">
+            <button>登录</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="login-footer">
+      <div>
+        <a href="http://baidu.com" target="_blank">联系我们</a> | <a>联系我们</a><a>联系我们</a><a>联系我们</a>
+      </div>
+      <div>
+        Copyrite@2004-2017 牛阿普版权所有
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</body>
+</html>

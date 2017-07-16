@@ -1,0 +1,574 @@
+
+
+html,
+body {
+    background-color: #efeff4;
+    margin: 0;
+}
+
+/*登陆页*/
+.login-bar{
+    top:0;
+    margin-top: 0;
+    width:100%;
+    height:5rem;
+    background-color: #0e90d2;
+    position: fixed;
+    z-index: 999;
+}
+
+.login-bar-title{
+    text-align: center;
+    /*background-color: #0bb20c;*/
+    margin-top: 2.4rem;
+    font-size: 1.6rem;
+    color: #ffffff;
+}
+
+.login-bar-title img{
+    width: 1.9rem;
+    margin-right: 0.5rem;
+}
+
+.login-div{
+    position: fixed;
+    margin-top: 5rem;
+    width: 100%;
+    height: 20rem;
+    text-align: center;
+}
+
+.login-board{
+    z-index: 999;
+    width:30rem;
+    height: 18rem;
+    border-radius: 0.2rem;
+    transition: opacity .5s;
+    background-color: #ffffff;
+    padding: 0.2rem 5rem;
+    margin-left:auto; margin-right:auto;
+    -webkit-box-shadow: 0 0 0.4rem rgba(0, 0, 0, .55);
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, .55);
+    text-align: left;
+    font-weight: 600;
+}
+
+.login-title{
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+.login-title img{
+    background-color: #cbcbcb;
+    width:2rem;
+    border-radius: 1rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.login-input{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    border:1px #cbcbcb solid;
+    padding: 0.3rem 0;
+}
+.login-input img{
+    width: 1.5rem;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.login-input input{
+    height: 1.4rem;
+    line-height:1.4rem;
+    font-size: 1.3rem;
+    border: none;
+    outline:medium;
+}
+
+.login-input input:focus{
+    font-size: 1.2rem;
+    border: none;
+}
+
+.login-btn{
+    text-align: center;
+    margin-top: 2rem;
+}
+.login-btn button{
+    font-size: 1rem;
+    width: 8rem;
+    padding: 0.5rem 0.3rem;
+    border: none;
+    color: #fff;
+    background-color: #f43530;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.login-btn button:hover{
+    color: #fff;
+    background-color: #f76260;
+}
+
+.head-bar{
+    top:0px;
+    /*margin-top: 0;*/
+    width:100%;
+    height:3.5rem;
+    background-color: #0e90d2;
+    position: fixed;
+    z-index: 999;
+}
+
+.head-name{
+    margin-left: 3rem;
+    display: inline-block;
+    line-height:3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-size:1.5rem;
+}
+
+.handle-div{
+    float: right;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.handle-div span{
+    padding: 0 0.3rem;
+    cursor: pointer;
+    color:#ffffff;
+}
+
+.handle-div span:hover{
+    color: seashell;
+}
+
+
+
+.content{
+    position: absolute;
+    top:0px;
+    width:100%;
+    height: 100vh;
+    background-color: #eeeeee;
+}
+
+.blank-content{
+    width: 100%;
+    height: 3.5rem;
+}
+
+.content-left{
+    position: absolute;
+    width:8rem;
+    height: 100%;
+    border-right: 5px #0e90d2 solid;
+    /*background-color: #9ed99d;*/
+    z-index: 998;
+    background-color: #efeff4;
+}
+
+.content-right{
+    background-color: #0e90d2;
+    width: 100%;
+    display: inline-block;
+}
+
+.ul-cate{
+    position: fixed;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    width: 8rem;
+    border: none;
+    margin-top: 3.5rem;
+    z-index: 998;
+}
+
+.li-cate{
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 1.2rem;
+    -webkit-touch-callout: none;
+    display: block;
+    align-items: center;
+    height: auto;
+    vertical-align: middle;
+    border-bottom: 1px #9b9b9b solid;
+    font-size: 1.1rem;
+    z-index: 998;
+    background-color: #ffffff;
+}
+
+.li-cate:hover{
+    background-color: #0e90d2;
+    cursor: pointer;
+}
+
+.list-cate-active{
+    background-color: #0e90d2;
+}
+
+.main-board{
+    z-index: 10;
+    position: absolute;
+    height: 100vh;
+    top:0;
+    width: 100%;
+    overflow: scroll;
+}
+
+.user-list-board{
+    background-color: #ffffff;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    width:50rem;
+}
+
+.ul-table-view{
+    position: fixed;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    border: none;
+    margin-top: 3.5rem;
+    z-index: 998;
+}
+
+.table-view{
+    width: 100%;
+    margin-bottom: 1.6rem;
+    border-spacing: 0;
+    border-collapse: separate;
+    max-width: 100%;
+    background-color: transparent;
+    empty-cells: show;
+    box-sizing: border-box;
+    display: table;
+    border-color: grey;
+    border-bottom: 2px #dddddd solid;
+}
+
+.table-title{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.table-view thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.table-view>thead:first-child>tr:first-child>th {
+    border-top: 0;
+}
+
+
+.table-view>thead>tr>th {
+    border-bottom: 1px solid #ddd;
+    padding: .7rem;
+    line-height: 1.6;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+    border-collapse: separate;
+}
+
+.table-view tbody{
+    empty-cells: show;
+}
+
+
+.table-view>tbody>tr:nth-child(odd)>td {
+    background-color: #cdcdcd;
+}
+
+.table-view>tbody>tr:hover>td {
+    background-color: #0e90d2;
+    cursor: pointer;
+}
+
+
+.table-view >tbody> tr {
+     display: table-row;
+     vertical-align: inherit;
+     height: 2rem;
+     border-top: 1px solid #222;
+ }
+
+.table-view >tbody>tr>td>img{
+    height: 2rem;
+}
+
+.user-search{
+    margin-left: 10rem;
+    margin-top: 5rem;
+    padding: 0 0.5rem;
+}
+.user-search input{
+    font-size: 1rem;
+}
+
+.user-search button{
+    font-size: 1rem;
+    line-height: 1rem;
+    cursor: pointer;
+}
+
+.shop-title{
+    margin-left: 10rem;
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.shop-title span{
+    margin-left: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #3d86ff;
+}
+
+.shop-title button{
+    margin-left: 0.8rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    cursor: pointer;
+}
+
+
+.page-control-div{
+    margin-top: -1rem;
+    padding: 0.5rem 0.5rem;
+    font-size:1.2rem;
+}
+
+.page-control-div input{
+    font-size: 1.2rem;
+    width: 2rem;
+}
+.page-control-div span{
+    padding: 0 2rem;
+}
+
+.app-btn{
+    font-size: 0.9rem;
+    line-height: 1rem;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+
+    color: #fff;
+    background-color: #0e90d2;
+    border-radius: 0.1rem;
+    cursor: pointer;
+}
+.app-btn:hover{
+    font-size: 0.9rem;
+    line-height: 1rem;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+
+    color: #fff;
+    background-color: #5792ff;
+    border-radius: 0.1rem;
+    cursor: pointer;
+}
+
+.btn-unable{
+    font-size: 0.9rem;
+    line-height: 1rem;
+    display: inline;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    color: #000;
+    background-color: #aaaaaa;
+    border-radius: 0.1rem;
+}
+
+.cover-board{
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: #b2b2b2;
+    opacity: 0.5;
+}
+
+.create-board{
+    display: none;
+    position: fixed;
+    top: 4.5rem;
+    left:20%;
+    z-index: 1001;
+    width:60%;
+    border-radius: 0.5rem;
+    transition: opacity .5s;
+    background-color: #ffffff;
+    padding: 0.2rem 0rem;
+}
+
+.create-board-show{
+    display: block;
+}
+
+.board-title{
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    color: #ffffff;
+    background-color: #0e90d2;
+}
+
+.board-content{
+    padding: 1rem 6rem;
+    text-align: center;
+    padding-bottom: 0rem;
+}
+
+.board-content>div{
+    margin-bottom: 1rem;
+}
+.board-content >div> label{
+    font-size: 1.2rem;
+}
+.board-content>div> input{
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.searchBtn{
+    font-size: 1rem;
+    line-height: 1rem;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 0.1rem;
+    cursor: pointer;
+    background-color: #10aeff;
+    color: #222222;
+}
+.searchBtn:hover{
+    font-size: 1rem;
+    line-height: 1rem;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 0.1rem;
+    cursor: pointer;
+    background-color: #3782ff;
+    color: #222222;
+}
+
+
+.tips-div{
+    display: none;
+}
+
+.tips-div-show{
+    animation:myfirst 1s;
+    -moz-animation:myfirst 1s; /* Firefox */
+    -webkit-animation:myfirst 1s; /* Safari and Chrome */
+    -o-animation:myfirst 1s; /* Opera */
+    overflow: hidden;
+}
+
+@keyframes myfirst
+{
+    from {height:0;}
+    to {height:auto;}
+}
+
+.tips-div-hide{
+    display: none;
+}
+
+
+.tips-line{
+    border-bottom: 1px #b2b2b2 solid;
+    display: flex;
+    justify-content:space-between;
+}
+.tips-line:hover{
+    background-color:#9fb7fc;
+}
+
+.search-img{
+    vertical-align: middle;
+    width: 1.7rem;
+}
+
+.search-name{
+    line-height: 1.5rem;
+}
+
+.tips{
+    height: 1rem;
+    color: #ce3c39;
+}
+
+.tips-show{
+    /*color: #ce3c39;*/
+    height: 1rem;
+    animation:tips-show 2s;
+    -moz-animation:tips-show 2s; /* Firefox */
+    -webkit-animation:tips-show 2s; /* Safari and Chrome */
+    -o-animation:tips-show 2s; /* Opera */
+}
+
+@keyframes tips-show
+{
+    from {color: #ce3c39}
+    to {color: #ffffff}
+}
+
+.board-footer{
+    /*padding-top: 1rem;*/
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.board-footer > button{
+    font-size: 1rem;
+    line-height: 1rem;
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 0.1rem;
+    cursor: pointer;
+}
+
+.board-footer .ok{
+    color: #fff;
+    background-color: #f76260;
+}
+.board-footer .ok:hover{
+    color: #353535;
+    background-color: #f76260;
+}
+
+.board-footer .cancel{
+    color: #fff;
+    background-color: #aaaaaa;
+    margin-left: 2rem;
+}
+
+.board-footer .cancel:hover{
+    color: #353535;
+    background-color: #aaaaaa;
+    margin-left: 2rem;
+}
+
+/*遮罩*/
+.cover{
+    filter: blur(1.5px);
+    pointer-events: none;
+}
+/*禁止滚动*/
+.scroll-forbid{
+    overflow: hidden;
+}

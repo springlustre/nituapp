@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "format-detection" content = "telephone=no">
+    <title>wifi客流分析系统</title>
+
+    <link href="/feeleriii/static/pc/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/feeleriii/static/pc/css/business.css">
+    <link rel="stylesheet" href="/feeleriii/static/pc/css/app.css">
+
+    <link rel="stylesheet" href="/feeleriii/static/pc/css/data.css">
+
+    <link rel="stylesheet" href="/feeleriii/static/pc/css/modal.css">
+    <link href="/feeleriii/static/pc/css/shop.css" rel="stylesheet">
+
+    <link rel="bookmark"  type="image/x-icon"  href="/feeleriii/static/pc/img/favicon.ico"/>
+    <link rel="shortcut icon" href="/feeleriii/static/pc/img/favicon.ico">
+
+    <script src="/feeleriii/static/pc/js/fetch.min.js"></script>
+
+
+    <script>
+      (function(designWidth, maxWidth) {
+        var doc = document,
+          win = window;
+        var docEl = doc.documentElement;
+        var tid;
+        var rootItem,rootStyle;
+
+        function refreshRem() {
+          var width = docEl.getBoundingClientRect().width;
+          if (!maxWidth) {
+            maxWidth = 540;
+          };
+          if (width > maxWidth) {
+            width = maxWidth;
+          }
+          //与淘宝做法不同，直接采用简单的rem换算方法1rem=100px
+          var rem = width * 20 / designWidth;
+          //兼容UC开始
+          rootStyle="html{font-size:"+rem+'px !important}';
+          rootItem = document.getElementById('rootsize') || document.createElement("style");
+          if(!document.getElementById('rootsize')){
+            document.getElementsByTagName("head")[0].appendChild(rootItem);
+            rootItem.id='rootsize';
+          }
+          if(rootItem.styleSheet){
+            rootItem.styleSheet.disabled||(rootItem.styleSheet.cssText=rootStyle)
+          }else{
+            try{rootItem.innerHTML=rootStyle}catch(f){rootItem.innerText=rootStyle}
+          }
+          //兼容UC结束
+          docEl.style.fontSize = rem + "px";
+        };
+        refreshRem();
+
+        win.addEventListener("resize", function() {
+          clearTimeout(tid); //防止执行两次
+          tid = setTimeout(refreshRem, 300);
+        }, false);
+
+        win.addEventListener("pageshow", function(e) {
+          if (e.persisted) { // 浏览器后退的时候重新计算
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+          }
+        }, false);
+
+        if (doc.readyState === "complete") {
+          doc.body.style.fontSize = "16px";
+        } else {
+          doc.addEventListener("DOMContentLoaded", function(e) {
+            doc.body.style.fontSize = "16px";
+          }, false);
+        }
+      })(640, 640);
+    </script>
+    <script>
+        window.onscroll = function () {
+            if (document.documentElement.scrollTop + document.body.scrollTop > 100) {
+                document.getElementById("to_top").style.display = "block";
+            }
+            else {
+                document.getElementById("to_top").style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<script type="text/javascript" src="/feeleriii/static/pc/sjsout/frontend-fastopt.js"></script>
+<!--<script type="text/javascript" src="/superpay/static/sjsout/frontend-opt.js"></script>-->
+<!--<script type="text/javascript" src="/feeleriii/static/pc/sjsout/frontend-launcher.js"></script>-->
+<!--<script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/2.5.1/vconsole.min.js"></script>-->
+
+<script src="/feeleriii/static/pc/js/WdatePicker.js"></script>
+<script src="/feeleriii/static/pc/js/Chart.bundle.min.js"></script>
+<script src="https://cdn.bootcss.com/es6-promise/4.1.0/es6-promise.auto.min.js"></script>
+</body>
+</html>

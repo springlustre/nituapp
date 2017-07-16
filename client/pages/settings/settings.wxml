@@ -1,0 +1,32 @@
+ <view class="person" bindtap="person">
+	<view class="setting_list">
+		<text>个人信息</text>
+		<text class="list_right">></text>
+	</view>
+</view>
+
+<button type="warn" bindtap="logout">退出登录({{ username }})</button>
+
+
+<view class="chatRoom_tab">
+		<view class="contacts" bindtap="tabMain">
+    	    <view class="bar-img">
+    	      <image src="../../images/icon/chat-bar.png"></image>
+    	    </view>
+    		<view class="bar-text"> 会话 </view>
+    	</view>
+
+    	<view class="contacts" bindtap="tabRooms">
+    	    <view class="bar-img">
+    	      <image src="../../images/icon/room-bar.png"></image>
+    	    </view>
+    		<view class="bar-text"> 会议室 </view>
+    	</view>
+
+        <view class="contacts" >
+            <view class="bar-img">
+              <image src="../../images/icon/my-bar2.png"></image>
+            </view>
+            <view class="bar-text active"> 我的 </view>
+        </view>
+</view>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>应用登录</title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="../css/business.css" rel="stylesheet">
+		<link href="../css/app.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/data.css">
+
+		<link rel="stylesheet" href="../css/modal.css">
+		<link href="../css/shop.css" rel="stylesheet">
+
+		<style>
+			/*html,*/
+			/*body {*/
+				/*padding-left: 1rem;*/
+				/*padding-right: 1rem;*/
+				/*background-color: #43464d;*/
+			/*}*/
+		</style>
+
+		<script>
+      (function(designWidth, maxWidth) {
+        var doc = document,
+          win = window;
+        var docEl = doc.documentElement;
+        var tid;
+        var rootItem,rootStyle;
+
+        function refreshRem() {
+          var width = docEl.getBoundingClientRect().width;
+          if (!maxWidth) {
+            maxWidth = 540;
+          };
+          if (width > maxWidth) {
+            width = maxWidth;
+          }
+          //与淘宝做法不同，直接采用简单的rem换算方法1rem=100px
+          var rem = width * 20 / designWidth;
+          //兼容UC开始
+          rootStyle="html{font-size:"+rem+'px !important}';
+          rootItem = document.getElementById('rootsize') || document.createElement("style");
+          if(!document.getElementById('rootsize')){
+            document.getElementsByTagName("head")[0].appendChild(rootItem);
+            rootItem.id='rootsize';
+          }
+          if(rootItem.styleSheet){
+            rootItem.styleSheet.disabled||(rootItem.styleSheet.cssText=rootStyle)
+          }else{
+            try{rootItem.innerHTML=rootStyle}catch(f){rootItem.innerText=rootStyle}
+          }
+          //兼容UC结束
+          docEl.style.fontSize = rem + "px";
+        };
+        refreshRem();
+
+        win.addEventListener("resize", function() {
+          clearTimeout(tid); //防止执行两次
+          tid = setTimeout(refreshRem, 300);
+        }, false);
+
+        win.addEventListener("pageshow", function(e) {
+          if (e.persisted) { // 浏览器后退的时候重新计算
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+          }
+        }, false);
+
+        if (doc.readyState === "complete") {
+          doc.body.style.fontSize = "16px";
+        } else {
+          doc.addEventListener("DOMContentLoaded", function(e) {
+            doc.body.style.fontSize = "16px";
+          }, false);
+        }
+      })(640, 640);
+		</script>
+	</head>
+
+	<body>
+	<div class="mob-background">
+		<header class="mobile-bar">
+			微信安全登录
+		</header>
+
+		<div class="logo-div">
+			<img src="../img/test.png">
+			<div class="logo-div-tips">
+				即将登录feeler3，请确认是否本人操作
+			</div>
+			<div class="logo-div-remind">
+				<img src="../img/duigou.png">
+				使用你的账号登录该应用
+			</div>
+		</div>
+
+		<div class="login-btn-div">
+			<button class="mob-condirm-btn">
+				确认登录
+			</button>
+			<button class="mob-cancel-btn">
+				取消
+			</button>
+		</div>
+
+	</div>
+
+		<script type="text/javascript" charset="utf-8">
+
+		</script>
+	</body>
+
+</html>

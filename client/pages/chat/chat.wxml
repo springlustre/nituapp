@@ -1,0 +1,46 @@
+
+<view class="body">
+	<view class="contain">
+		<view class="chat" bindtap="into_inform">
+			<image src="../../images/chat.png"></image>
+			<text>申请与通知</text>
+		</view>
+	</view>
+
+	  <!--群组-->
+      <view wx:for = "{{rooms}}" class="rooms">
+        <view class="nbr_header"></view>
+    		<view class="info" bindtap="into_group"
+    		    data-groupid="{{item.roomId}}" data-username="{{ item.name }}">
+    			<image src="../../images/number.png"  ></image>
+    		</view>
+    		<view class="nbr_body" data-username="{{ item.name }}" data-groupid="{{item.roomId}}"
+    		bindtap="into_group">
+    			<text data-username="{{ item.name }}"> {{item.name}} </text>
+    		</view>
+      </view>
+</view>
+
+<view class="chatRoom_tab" >
+	<view class="contacts" bindtap="tabMain">
+	    <view class="bar-img">
+	      <image src="../../images/icon/chat-bar.png"></image>
+	    </view>
+		<view class="bar-text"> 会话 </view>
+	</view>
+
+	<view class="contacts">
+	    <view class="bar-img">
+	      <image src="../../images/icon/room-bar2.png"></image>
+	    </view>
+		<view class="bar-text active"> 会议室 </view>
+	</view>
+
+    <view class="contacts" bindtap="tabSetting">
+        <view class="bar-img">
+          <image src="../../images/icon/my-bar.png"></image>
+        </view>
+        <view class="bar-text"> 我的 </view>
+    </view>
+
+</view>

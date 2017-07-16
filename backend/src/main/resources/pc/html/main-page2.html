@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard Template for Bootstrap</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="../css/business.css" rel="stylesheet">
+  <link href="../css/app.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/data.css">
+
+  <link rel="stylesheet" href="../css/modal.css">
+  <link href="../css/shop.css" rel="stylesheet">
+  <script>
+    (function(designWidth, maxWidth) {
+      var doc = document,
+        win = window;
+      var docEl = doc.documentElement;
+      var tid;
+      var rootItem,rootStyle;
+
+      function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+        if (!maxWidth) {
+          maxWidth = 540;
+        };
+        if (width > maxWidth) {
+          width = maxWidth;
+        }
+        //与淘宝做法不同，直接采用简单的rem换算方法1rem=100px
+        var rem = width * 20 / designWidth;
+        //兼容UC开始
+        rootStyle="html{font-size:"+rem+'px !important}';
+        rootItem = document.getElementById('rootsize') || document.createElement("style");
+        if(!document.getElementById('rootsize')){
+          document.getElementsByTagName("head")[0].appendChild(rootItem);
+          rootItem.id='rootsize';
+        }
+        if(rootItem.styleSheet){
+          rootItem.styleSheet.disabled||(rootItem.styleSheet.cssText=rootStyle)
+        }else{
+          try{rootItem.innerHTML=rootStyle}catch(f){rootItem.innerText=rootStyle}
+        }
+        //兼容UC结束
+        docEl.style.fontSize = rem + "px";
+      };
+      refreshRem();
+
+      win.addEventListener("resize", function() {
+        clearTimeout(tid); //防止执行两次
+        tid = setTimeout(refreshRem, 300);
+      }, false);
+
+      win.addEventListener("pageshow", function(e) {
+        if (e.persisted) { // 浏览器后退的时候重新计算
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 300);
+        }
+      }, false);
+
+      if (doc.readyState === "complete") {
+        doc.body.style.fontSize = "16px";
+      } else {
+        doc.addEventListener("DOMContentLoaded", function(e) {
+          doc.body.style.fontSize = "16px";
+        }, false);
+      }
+    })(640, 640);
+
+  </script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top feeler3-nav">
+  <div class="container-fluid feeler3-container" >
+    <div class="navbar-header">
+      <a class="navbar-brand feeler3-brand" href="#">客流统计分析系统</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right feeler3-navbar">
+        <li><a href="#"><img src="../img/username.png"></a></li>
+        <li><a href="#">我的名字</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="#"> <img  class="nav-sidebar-img" src="../img/query-logo.png"> 查询 </a></li>
+        <li><a href="#" class="bar-child"><img  class="nav-sidebar-img"> 按日查询 <img class="bar-child-img" src="../img/right-point.png"> </a></li>
+        <li><a href="#" class="bar-child"><img  class="nav-sidebar-img"> 按日查询 <img class="bar-child-img" src="../img/right-point.png"> </a></li>
+        <li><a href="#" class="bar-child"><img  class="nav-sidebar-img"> 按日查询 <img class="bar-child-img" src="../img/right-point.png"> </a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href=""> <img  class="nav-sidebar-img" src="../img/my-shop.png"> 我的店铺</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href=""> <img  class="nav-sidebar-img" src="../img/help.png"> 帮助</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href=""> <img  class="nav-sidebar-img" src="../img/logout-logo.png"> 退出</a></li>
+      </ul>
+    </div>
+    <!--<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">-->
+      <!--<h1 class="page-header">Dashboard</h1>-->
+      <!--<h1 class="page-header">Dashboard2</h1>-->
+      <!--<h1 class="page-header">Dashboard3</h1>-->
+      <!--<h1 class="page-header">Dashboard4</h1>-->
+
+    <!--</div>-->
+  </div>
+
+  <div class="row">
+    <div class="main">
+      <h1 class="page-header">Dashboard</h1>
+      <h1 class="page-header">Dashboard2</h1>
+      <h1 class="page-header">Dashboard3</h1>
+      <h1 class="page-header">Dashboard4</h1>
+      <div class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
